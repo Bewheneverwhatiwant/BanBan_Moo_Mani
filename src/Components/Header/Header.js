@@ -9,7 +9,7 @@ const HeaderContainer = styled.header`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 10px;
 
     background-color: orange;
@@ -48,9 +48,14 @@ export default function Header() {
         navigate('/');
     }
 
+    const GoMyPage = () => {
+        navigate('/');
+    }
+
     return (
         <HeaderContainer onClick={Back}>
             <Title>반반무마니</Title>
+            <Detail onClick={GoMyPage}>마이페이지</Detail>
         </HeaderContainer>
     );
 };

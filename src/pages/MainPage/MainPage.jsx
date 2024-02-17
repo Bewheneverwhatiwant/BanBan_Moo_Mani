@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import CustomRow from '../../Components/Container/CustomRow';
+import CustomColumn from '../../Components/Container/CustomColumn';
 import CustomCenter from '../../Components/Container/CustomCenter';
 import StyledImg from '../../Components/Container/StyledImg';
 import Footer from '../../Components/Footer/Footer';
@@ -25,9 +26,10 @@ const PageContainer = styled(ContainerCenter)`
     position: relative;
 `
 
-const Next = styled.button`
-width: 20%;
-height: 5vh;
+// 기본 버튼 디자인
+const BasicButton = styled.button`
+width: ${props => props.width || '20%'};
+height: ${props => props.height || '5vh'};
 border: none;
 background-color: orange;
 border-radius: 10px;
@@ -45,10 +47,19 @@ export default function Component() {
 
   const navigate = useNavigate();
 
+  const Go = () => {
+    navigate('/');
+  };
+
   return (
     <ContainerCenter>
       <PageContainer>
         메인페이지
+        <BasicButton onClick={Go} width='30%'>집안일 입력하기</BasicButton>
+        <BasicButton onClick={Go} width='30%'>구성원 수정하기</BasicButton>
+        <BasicButton onClick={Go} width='30%'>집안일 분배하기</BasicButton>
+        <BasicButton onClick={Go} width='30%'>집안일 현황 보기</BasicButton>
+        <BasicButton onClick={Go} width='30%'>우리 가족의 랭크는?</BasicButton>
       </PageContainer>
     </ContainerCenter>
   );
