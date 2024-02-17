@@ -9,10 +9,10 @@ const HeaderContainer = styled.header`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px;
 
-    background-color: brown;
+    background-color: orange;
     color: white;
     gap: 10px;
 `;
@@ -50,7 +50,7 @@ export default function Header() {
 
     return (
         <HeaderContainer onClick={Back}>
-            <Title>돌려돌려</Title>
+            <Title>반반무마니</Title>
         </HeaderContainer>
     );
 };

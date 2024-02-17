@@ -1,9 +1,55 @@
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+import CustomRow from '../../Components/Container/CustomRow';
+import CustomCenter from '../../Components/Container/CustomCenter';
+import StyledImg from '../../Components/Container/StyledImg';
+import Footer from '../../Components/Footer/Footer';
+
+const ContainerCenter = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+  width: 100%;
+`
+
+const PageContainer = styled(ContainerCenter)`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px;
+    gap: 10px;
+    position: relative;
+`
+
+const Next = styled.button`
+width: 20%;
+height: 5vh;
+border: none;
+background-color: orange;
+border-radius: 10px;
+color: white;
+font-family: 'RIDIBatang';
+font-size: 10px;
+
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+`;
 
 export default function Component() {
+
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <p> MainPage </p>
-    </div>
+    <ContainerCenter>
+      <PageContainer>
+        메인페이지
+      </PageContainer>
+    </ContainerCenter>
   );
 };
