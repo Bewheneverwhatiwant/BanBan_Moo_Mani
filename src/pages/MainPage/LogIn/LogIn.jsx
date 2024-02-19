@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import CustomRow from '../../Components/Container/CustomRow';
-import CustomColumn from '../../Components/Container/CustomColumn';
-import CustomCenter from '../../Components/Container/CustomCenter';
-import StyledImg from '../../Components/Container/StyledImg';
-import Footer from '../../Components/Footer/Footer';
 
 const ContainerCenter = styled.div`
   display: flex;
@@ -46,23 +41,18 @@ justify-content: center;
 
 export default function Component() {
 
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const Current = () => {
-    navigate('/currenthousework');
-  };
+    const SignUp = () => {
+        navigate('/signup');
+    }
 
-  const Rank = () => {
-    navigate('/rankpage');
-  }
-
-  return (
-    <ContainerCenter>
-      <PageContainer>
-        메인페이지
-        <BasicButton onClick={Current} width='30%'>집안일 현황 보기</BasicButton>
-        <BasicButton onClick={Rank} width='30%'>우리 가족의 랭크는?</BasicButton>
-      </PageContainer>
-    </ContainerCenter>
-  );
+    return (
+        <ContainerCenter>
+            <PageContainer>
+                로그인 페이지
+                <BasicButton onClick={SignUp}>회원가입</BasicButton>
+            </PageContainer>
+        </ContainerCenter>
+    );
 };

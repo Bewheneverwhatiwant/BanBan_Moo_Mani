@@ -24,6 +24,15 @@ color: white;
 text-align: center;
 `;
 
+const HeaderButton = styled.button`
+background-color: transparent;
+font-size: 10px;
+font-family: 'RIDIBatang';
+color: white;
+text-align: center;
+border: none;
+`;
+
 const Detail = styled.a`
 font-size: 10px;
 font-family: 'RIDIBatang';
@@ -48,14 +57,18 @@ export default function Header() {
         navigate('/');
     }
 
-    const GoMyPage = () => {
-        navigate('/');
+    const SignIn = () => {
+        navigate('/login');
+    }
+
+    const MyPage = () => {
+        navigate('/mypage');
     }
 
     return (
-        <HeaderContainer onClick={Back}>
-            <Title>반반무마니</Title>
-            <Detail onClick={GoMyPage}>마이페이지</Detail>
+        <HeaderContainer>
+            <Title onClick={Back}>반반무마니</Title>
+            <HeaderButton onClick={SignIn}>로그인</HeaderButton>
         </HeaderContainer>
     );
 };

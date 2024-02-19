@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import CustomRow from '../../Components/Container/CustomRow';
-import CustomColumn from '../../Components/Container/CustomColumn';
-import CustomCenter from '../../Components/Container/CustomCenter';
-import StyledImg from '../../Components/Container/StyledImg';
-import Footer from '../../Components/Footer/Footer';
 
 const ContainerCenter = styled.div`
   display: flex;
@@ -46,23 +41,24 @@ justify-content: center;
 
 export default function Component() {
 
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const Current = () => {
-    navigate('/currenthousework');
-  };
+    const Write = () => {
+        navigate('/writehousework');
+    };
 
-  const Rank = () => {
-    navigate('/rankpage');
-  }
+    const Divide = () => {
+        navigate('/dividehousework');
+    }
 
-  return (
-    <ContainerCenter>
-      <PageContainer>
-        메인페이지
-        <BasicButton onClick={Current} width='30%'>집안일 현황 보기</BasicButton>
-        <BasicButton onClick={Rank} width='30%'>우리 가족의 랭크는?</BasicButton>
-      </PageContainer>
-    </ContainerCenter>
-  );
+    return (
+        <ContainerCenter>
+            <PageContainer>
+                여기는 집안일 현황 페이지
+                <BasicButton onClick={Write} width='30%'>집안일 입력하기</BasicButton>
+                <BasicButton onClick={Divide} width='30%'>집안일 분배하기</BasicButton>
+                <BasicButton width='30%'>집안일 수정하기</BasicButton>
+            </PageContainer>
+        </ContainerCenter>
+    );
 };
