@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import CustomRow from '../../../Components/Container/CustomRow';
 
 const ContainerCenter = styled.div`
   display: flex;
@@ -39,6 +40,24 @@ align-items: center;
 justify-content: center;
 `;
 
+const HouseWork = styled.div`
+width: 80%;
+height: 5vh;
+border: none;
+background-color: orange;
+border-radius: 10px;
+color: white;
+font-family: 'RIDIBatang';
+font-size: 10px;
+
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+padding-left: 10px;
+padding-right: 10px;
+`
+
 export default function Component() {
 
     const navigate = useNavigate();
@@ -58,6 +77,12 @@ export default function Component() {
                 <BasicButton onClick={Write} width='30%'>집안일 입력하기</BasicButton>
                 <BasicButton onClick={Divide} width='30%'>집안일 분배하기</BasicButton>
                 <BasicButton width='30%'>집안일 수정하기</BasicButton>
+                <HouseWork>
+
+                    <BasicButton>+</BasicButton>
+                    집안일 입력
+
+                </HouseWork>
             </PageContainer>
         </ContainerCenter>
     );
