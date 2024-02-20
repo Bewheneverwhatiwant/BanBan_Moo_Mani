@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import CustomRow from '../../../Components/Container/CustomRow';
 
 const ContainerCenter = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ const PageContainer = styled(ContainerCenter)`
 // 기본 버튼 디자인
 const BasicButton = styled.button`
 width: ${props => props.width || '20%'};
-height: ${props => props.height || '5vh'};
+height: ${props => props.height || '3vh'};
 border: none;
 background-color: orange;
 border-radius: 10px;
@@ -39,6 +40,55 @@ align-items: center;
 justify-content: center;
 `;
 
+const Find = styled.button`
+width: 30%;
+border: none;
+background-color: transparent;
+color: #FFCE86;
+font-family: 'RIDIBatang';
+font-size: 12px;
+
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+text-decoration: underline;
+`;
+
+const LogIn = styled.input`
+border: 1px solid orange;
+border-radius: 20px;
+
+display:flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+
+width: 80%;
+height: 5vh;
+padding-left: 10px;
+
+&::placeholder {
+  color: #FFCE86;
+  font-family: 'RIDIBatang';
+}
+`;
+
+const Detail = styled.a`
+color: #949494;
+font-family: 'RIDIBatang';
+font-size: 15px;
+`;
+
+const Row = styled.div`
+width: 80%;
+align-items: center;
+justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: ${props => props.gap || '30px'};
+`;
+
 export default function Component() {
 
     const navigate = useNavigate();
@@ -50,8 +100,17 @@ export default function Component() {
     return (
         <ContainerCenter>
             <PageContainer>
-                로그인 페이지
-                <BasicButton onClick={SignUp}>회원가입</BasicButton>
+                <Detail>환영합니다.</Detail>
+                <LogIn placeholder="아이디를 입력하세요." />
+                <LogIn placeholder="비밀번호를 입력하세요." />
+                <Row>
+                    <Find>아이디 찾기</Find>
+                    <Find>비밀번호 찾기</Find>
+                </Row>
+                <Row>
+                    <Detail>아직 계정이 없으신가요?</Detail>
+                    <BasicButton onClick={SignUp}>회원가입</BasicButton>
+                </Row>
             </PageContainer>
         </ContainerCenter>
     );
