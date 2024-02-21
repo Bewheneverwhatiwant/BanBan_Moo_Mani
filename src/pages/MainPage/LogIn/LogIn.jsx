@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import CustomRow from '../../../Components/Container/CustomRow';
+import CustomColumn from '../../../Components/Container/CustomColumn';
+import StyledImg from '../../../Components/Container/StyledImg';
 
 const ContainerCenter = styled.div`
   display: flex;
@@ -100,17 +102,25 @@ export default function Component() {
     return (
         <ContainerCenter>
             <PageContainer>
-                <Detail>환영합니다.</Detail>
-                <LogIn placeholder="아이디를 입력하세요." />
-                <LogIn placeholder="비밀번호를 입력하세요." />
-                <Row>
-                    <Find>아이디 찾기</Find>
-                    <Find>비밀번호 찾기</Find>
-                </Row>
-                <Row>
-                    <Detail>아직 계정이 없으신가요?</Detail>
-                    <BasicButton onClick={SignUp}>회원가입</BasicButton>
-                </Row>
+                <CustomColumn gap='30px'>
+
+                    <StyledImg src='logo.png' width='30%' height='15vh' />
+
+                    <CustomColumn>
+                        <LogIn placeholder="아이디를 입력하세요." />
+                        <LogIn placeholder="비밀번호를 입력하세요." />
+
+                        <Row>
+                            <Find>아이디 찾기</Find>
+                            <Find>비밀번호 찾기</Find>
+                        </Row>
+                    </CustomColumn>
+
+                    <Row>
+                        <Detail>아직 계정이 없으신가요?</Detail>
+                        <BasicButton onClick={SignUp}>회원가입</BasicButton>
+                    </Row>
+                </CustomColumn>
             </PageContainer>
         </ContainerCenter>
     );
