@@ -39,6 +39,25 @@ align-items: center;
 justify-content: center;
 `;
 
+const HouseWork = styled.input`
+border: 1px solid orange;
+border-radius: 20px;
+
+display:flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+
+width: 80%;
+height: 5vh;
+padding-left: 10px;
+
+&::placeholder {
+  color: #FFCE86;
+  font-family: 'RIDIBatang';
+}
+`;
+
 export default function Component() {
 
     const navigate = useNavigate();
@@ -47,6 +66,8 @@ export default function Component() {
         <ContainerCenter>
             <PageContainer>
                 집안일 입력 페이지
+                <HouseWork>집안일을 입력해주세요.</HouseWork>
+                <BasicButton>+</BasicButton>
             </PageContainer>
         </ContainerCenter>
     );

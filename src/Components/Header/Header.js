@@ -22,6 +22,11 @@ font-size: 15px;
 font-family: 'RIDIBatang';
 color: white;
 text-align: center;
+
+dosplay: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
 `;
 
 const HeaderButton = styled.button`
@@ -67,8 +72,10 @@ export default function Header() {
 
     return (
         <HeaderContainer>
-            <Title onClick={Back}>반반무마니</Title>
-            <HeaderButton onClick={SignIn}>로그인</HeaderButton>
+            <Title onClick={Back}>
+                <StyledImg src={'logo.png'} width='30px' height='30px' />
+            </Title>
+            <HeaderButton onClick={SignIn}>LOGIN</HeaderButton>
         </HeaderContainer>
     );
 };
