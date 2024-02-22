@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import StyledImg from '../../../../Components/Container/StyledImg';
 
 const ContainerCenter = styled.div`
   display: flex;
@@ -96,6 +97,15 @@ align-items: center;
 justify-content: flex-start;
 `;
 
+const Column = styled.div`
+width: 100%;
+align-items: center;
+justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: ${props => props.gap || '30px'};
+`;
+
 export default function Component() {
 
     const navigate = useNavigate();
@@ -107,14 +117,20 @@ export default function Component() {
     return (
         <ContainerCenter>
             <PageContainer>
-                <Detail>회원가입을 환영합니다.</Detail>
-                <LogIn placeholder="사용하실 아이디를 입력하세요." />
-                <Left>
-                    <IsDouble width='30%'>아이디 중복 검사</IsDouble>
-                </Left>
-                <LogIn placeholder="사용하실 비밀번호를 입력하세요." />
-                <LogIn placeholder="비밀번호를 한번 더 입력하세요." />
-                <BasicButton width='30%' height='4vh'>회원가입 완료</BasicButton>
+                <Column gap='50px'>
+                    <StyledImg src='icon_chicken.png' width='30%' height='15vh' />
+                    <Detail>회원가입을 환영합니다.</Detail>
+
+                    <Column gap='10px'>
+                        <LogIn placeholder="사용하실 아이디를 입력하세요." />
+                        <Left>
+                            <IsDouble width='30%'>아이디 중복 검사</IsDouble>
+                        </Left>
+                        <LogIn placeholder="사용하실 비밀번호를 입력하세요." />
+                        <LogIn placeholder="비밀번호를 한번 더 입력하세요." />
+                    </Column>
+                    <BasicButton width='30%' height='4vh'>회원가입 완료</BasicButton>
+                </Column>
             </PageContainer>
         </ContainerCenter>
     );
