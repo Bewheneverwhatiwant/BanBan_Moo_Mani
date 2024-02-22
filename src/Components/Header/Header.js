@@ -12,7 +12,7 @@ const HeaderContainer = styled.header`
     justify-content: space-between;
     padding: 10px;
 
-    background-color: orange;
+    background-color: transparent;
     color: white;
     gap: 10px;
 `;
@@ -33,7 +33,7 @@ const HeaderButton = styled.button`
 background-color: transparent;
 font-size: 10px;
 font-family: 'RIDIBatang';
-color: white;
+color: orange;
 text-align: center;
 border: none;
 `;

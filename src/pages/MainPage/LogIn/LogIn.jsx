@@ -83,11 +83,20 @@ font-size: 15px;
 `;
 
 const Row = styled.div`
-width: 80%;
+width: 100%;
 align-items: center;
 justify-content: center;
   display: flex;
   flex-direction: row;
+  gap: ${props => props.gap || '30px'};
+`;
+
+const Column = styled.div`
+width: 100%;
+align-items: center;
+justify-content: center;
+  display: flex;
+  flex-direction: column;
   gap: ${props => props.gap || '30px'};
 `;
 
@@ -102,25 +111,25 @@ export default function Component() {
     return (
         <ContainerCenter>
             <PageContainer>
-                <CustomColumn gap='30px'>
+                <Column gap='50px'>
 
-                    <StyledImg src='logo.png' width='30%' height='15vh' />
+                    <StyledImg src='icon_chicken.png' width='30%' height='15vh' />
 
-                    <CustomColumn>
+                    <Column>
                         <LogIn placeholder="아이디를 입력하세요." />
                         <LogIn placeholder="비밀번호를 입력하세요." />
 
-                        <Row>
+                        <Row gap='5px'>
                             <Find>아이디 찾기</Find>
                             <Find>비밀번호 찾기</Find>
                         </Row>
-                    </CustomColumn>
+                    </Column>
 
                     <Row>
                         <Detail>아직 계정이 없으신가요?</Detail>
                         <BasicButton onClick={SignUp}>회원가입</BasicButton>
                     </Row>
-                </CustomColumn>
+                </Column>
             </PageContainer>
         </ContainerCenter>
     );
