@@ -39,6 +39,23 @@ align-items: center;
 justify-content: center;
 `;
 
+const Rank = styled.div`
+border: 1px solid orange;
+border-radius: 20px;
+
+display:flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+
+width: 80%;
+height: 5vh;
+padding-left: 10px;
+
+  color: #FFCE86;
+  font-family: 'RIDIBatang';
+`;
+
 export default function Component() {
 
     const navigate = useNavigate();
@@ -46,7 +63,7 @@ export default function Component() {
     return (
         <ContainerCenter>
             <PageContainer>
-                랭크 페이지
+                <Rank>순위</Rank>
             </PageContainer>
         </ContainerCenter>
     );
