@@ -6,27 +6,24 @@ import CustomColumn from '../Container/CustomColumn';
 import CustomCenter from '../Container/CustomCenter';
 
 const HeaderContainer = styled.header`
+position: fixed;
+top: 0;
+width: 100%;
+
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 70%;
     padding: 10px;
 
     background-color: transparent;
     color: white;
-    gap: 10px;
-`;
 
-const Title = styled.h1`
-font-size: 15px;
-font-family: 'RIDIBatang';
-color: white;
-text-align: center;
+    border-bottom: 2px solid transparent;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 그라데이션 그림자 효과 */
 
-dosplay: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
+    transition: border-color 0.3s ease; /* 부드러운 효과를 위한 트랜지션 설정 */
 `;
 
 const HeaderButton = styled.button`
@@ -35,23 +32,8 @@ font-size: 10px;
 font-family: 'RIDIBatang';
 color: orange;
 text-align: center;
+justify-content: center;
 border: none;
-`;
-
-const Detail = styled.a`
-font-size: 10px;
-font-family: 'RIDIBatang';
-color: white;
-text-align: center;
-`;
-
-const CustomColumn2 = styled.div`
-width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: ${props => props.gap || '30px'};
 `;
 
 export default function Header() {
@@ -72,9 +54,7 @@ export default function Header() {
 
     return (
         <HeaderContainer>
-            <Title onClick={Back}>
-                <StyledImg src={'logo.png'} width='30px' height='30px' />
-            </Title>
+            <StyledImg src={'logo.png'} width='30px' height='30px' onClick={Back} />
             <HeaderButton onClick={SignIn}>LOGIN</HeaderButton>
         </HeaderContainer>
     );
