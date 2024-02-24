@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import StyledImg from '../../../../Components/Container/StyledImg';
+import { useContext } from 'react';
+import { OutletContext } from '../../../ForOutlet';
 
 const ContainerCenter = styled.div`
   display: flex;
@@ -113,6 +115,9 @@ export default function Component() {
     const SignUp = () => {
         navigate('/signup');
     }
+    const setBackSetting = useContext(OutletContext);
+
+    setBackSetting(false);
 
     return (
         <ContainerCenter>

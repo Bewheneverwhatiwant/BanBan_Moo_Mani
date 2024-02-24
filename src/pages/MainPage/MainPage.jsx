@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import CustomRow from '../../Components/Container/CustomRow';
-import CustomColumn from '../../Components/Container/CustomColumn';
-import CustomCenter from '../../Components/Container/CustomCenter';
-import StyledImg from '../../Components/Container/StyledImg';
-import Footer from '../../Components/Footer/Footer';
+import { useContext } from 'react';
+import { OutletContext } from '../ForOutlet';
 
 const ContainerCenter = styled.div`
   display: flex;
@@ -55,6 +52,10 @@ export default function Component() {
   const Rank = () => {
     navigate('/rankpage');
   }
+
+  const setBackSetting = useContext(OutletContext);
+
+  setBackSetting(true);
 
   return (
     <ContainerCenter>

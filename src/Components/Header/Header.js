@@ -9,6 +9,7 @@ const HeaderContainer = styled.header`
 position: fixed;
 top: 0;
 width: 100%;
+z-index: 99;
 
     display: flex;
     flex-direction: row;
@@ -17,7 +18,7 @@ width: 100%;
     gap: 70%;
     padding: 10px;
 
-    background-color: transparent;
+    background-color: white;
     color: white;
 
     border-bottom: 2px solid transparent;
@@ -36,7 +37,7 @@ justify-content: center;
 border: none;
 `;
 
-export default function Header() {
+export default function Header({ $background }) {
 
     const navigate = useNavigate();
 
@@ -53,9 +54,17 @@ export default function Header() {
     }
 
     return (
-        <HeaderContainer>
-            <StyledImg src={'logo.png'} width='30px' height='30px' onClick={Back} />
-            <HeaderButton onClick={SignIn}>LOGIN</HeaderButton>
-        </HeaderContainer>
+        <>
+            {$background ? (
+                <HeaderContainer>
+                    <StyledImg src={'logo.png'} width='30px' height='30px' onClick={Back} />
+                    <HeaderButton onClick={SignIn}>LOGIN</HeaderButton>
+                </HeaderContainer>
+            ) : (
+                <HeaderContainer>
+                    <StyledImg src={'logo.png'} width='30px' height='30px' onClick={Back} />
+                </HeaderContainer>
+            )}
+        </>
     );
 };
