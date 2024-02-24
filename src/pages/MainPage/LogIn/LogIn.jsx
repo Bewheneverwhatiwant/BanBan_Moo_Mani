@@ -79,7 +79,7 @@ padding-left: 10px;
 const Detail = styled.a`
 color: #949494;
 font-family: 'RIDIBatang';
-font-size: 15px;
+font-size: 10px;
 `;
 
 const Row = styled.div`
@@ -115,20 +115,23 @@ export default function Component() {
 
                     <StyledImg src='icon_chicken.png' width='30%' height='15vh' />
 
-                    <Column>
-                        <LogIn placeholder="아이디를 입력하세요." />
-                        <LogIn placeholder="비밀번호를 입력하세요." />
+                    <Column gap='13px'>
 
-                        <Row gap='5px'>
-                            <Find>아이디 찾기</Find>
-                            <Find>비밀번호 찾기</Find>
+                        <Column gap='13px'>
+                            <LogIn placeholder="아이디를 입력하세요." />
+                            <LogIn placeholder="비밀번호를 입력하세요." />
+
+                            <Row gap='10px'>
+                                <Find>아이디 찾기</Find>
+                                <Find>비밀번호 찾기</Find>
+                            </Row>
+                        </Column>
+
+                        <Row>
+                            <Detail>아직 계정이 없으신가요?</Detail>
+                            <BasicButton onClick={SignUp}>회원가입</BasicButton>
                         </Row>
                     </Column>
-
-                    <Row>
-                        <Detail>아직 계정이 없으신가요?</Detail>
-                        <BasicButton onClick={SignUp}>회원가입</BasicButton>
-                    </Row>
                 </Column>
             </PageContainer>
         </ContainerCenter>
