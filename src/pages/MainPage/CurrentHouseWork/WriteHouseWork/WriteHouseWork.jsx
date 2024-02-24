@@ -66,7 +66,7 @@ export default function Component() {
         <ContainerCenter>
             <PageContainer>
                 집안일 입력 페이지
-                <HouseWork>집안일을 입력해주세요.</HouseWork>
+                <HouseWork placeholder='집안일을 입력해주세요.' />
                 <BasicButton>+</BasicButton>
             </PageContainer>
         </ContainerCenter>

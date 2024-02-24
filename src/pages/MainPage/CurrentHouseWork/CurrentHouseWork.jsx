@@ -77,12 +77,6 @@ export default function Component() {
                 <BasicButton onClick={Write} width='30%'>집안일 입력하기</BasicButton>
                 <BasicButton onClick={Divide} width='30%'>집안일 분배하기</BasicButton>
                 <BasicButton width='30%'>집안일 수정하기</BasicButton>
-                <HouseWork>
-
-                    <BasicButton>+</BasicButton>
-                    집안일 입력
-
-                </HouseWork>
             </PageContainer>
         </ContainerCenter>
     );
