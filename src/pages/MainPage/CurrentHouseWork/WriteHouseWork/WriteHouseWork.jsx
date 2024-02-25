@@ -111,6 +111,28 @@ gap: ${(props) => props.gap || '20px'};
 export default function Component() {
 
     const navigate = useNavigate();
+    const [houseworkList, setHouseworkList] = useState(['']); // 집안일 목록 관리 상태
+
+    const handleHouseworkChange = (index, value) => {
+        const newList = [...houseworkList];
+        newList[index] = value;
+        setHouseworkList(newList);
+    };
+
+    const handleAddRow = () => {
+        setHouseworkList([...houseworkList, '']);
+    };
+
+    const handleRemoveRow = (index) => {
+        const newList = [...houseworkList];
+        newList.splice(index, 1);
+        setHouseworkList(newList);
+    };
+
+    const handleComplete = () => {
+        // TODO: 완료 버튼 클릭 시 동작 추가
+        console.log('Housework List:', houseworkList);
+    };
 
     return (
         <ContainerCenter>
@@ -121,20 +143,29 @@ export default function Component() {
                         <StyledImg src={'icon_egg.png'} width='30px' height='30px' />
                     </Title_Row>
 
-                    <BigColumn gap='5px'>
-                        <Row>
-                            <HouseWork placeholder='집안일을 입력해주세요.' />
-                            <CustomCenter>
-                                <BasicButton width='50px' height='30px'>완료</BasicButton>
-                            </CustomCenter>
-                        </Row>
-                        <AddButton>
-                            <StyledImg src={'icon_add.png'} width='30px' height='30px' />
-                        </AddButton>
-                    </BigColumn>
-
+                    {houseworkList.map((housework, index) => (
+                        <BigColumn gap='5px' key={index}>
+                            <Row>
+                                <HouseWork
+                                    placeholder='집안일을 입력해주세요.'
+                                    value={housework}
+                                    onChange={(e) => handleHouseworkChange(index, e.target.value)}
+                                />
+                                <CustomCenter>
+                                    <BasicButton width='50px' height='30px' onClick={handleComplete}>
+                                        완료
+                                    </BasicButton>
+                                </CustomCenter>
+                            </Row>
+                            {index === houseworkList.length - 1 && (
+                                <AddButton width='50px' height='30px' onClick={handleAddRow}>
+                                    <StyledImg src={'icon_add.png'} width='30px' height='30px' />
+                                </AddButton>
+                            )}
+                        </BigColumn>
+                    ))}
                 </BigColumn>
             </PageContainer>
         </ContainerCenter>
     );
-};
+}
