@@ -38,7 +38,7 @@ flex-direction: column;
 align-item: center;
 justify-content: flex-start;
 
-background-color: #FFCE86;
+background-color: #E0CE8D;
 `;
 
 const SemiTitle = styled.a`
@@ -113,7 +113,21 @@ export default function Component() {
 
     return (
         <Banner>
-            <SemiTitle>오늘 가족의 집안일</SemiTitle>
+            <MyTaskRow>
+                <CircleStyledImg src={'icon_family_2.png'} width='30px' height='30px' />
+                <CustomCenter>
+                    <SemiTitle>오늘 가족의 집안일</SemiTitle>
+                </CustomCenter>
+            </MyTaskRow>
+
+            <TaskColumn>
+                <StyledImg src={'icon_warn.png'} width='30px' height='30px' />
+                <Alarm>아직 초대된 가족이 없어요.</Alarm>
+                <TaskPlusButton onClick={Write} width='40%'>
+                    <StyledImg src={'icon_add.png'} width='20px' height='20px' />
+                    가족 초대하러 가기
+                </TaskPlusButton>
+            </TaskColumn>
         </Banner>
     );
 };
